@@ -359,7 +359,7 @@ h4 {
       height: 64px;
       object-fit: contain;
       flex-shrink: 0;
-      padding-right: 104px;
+      margin-right: 104px;
 }
 
 .cardtext {
@@ -807,10 +807,19 @@ h4 {
 
       .cardheader {
             flex-direction: column;
+            gap: 16px;
+      }
+
+      .cardheader .date {
+            order: 2;
       }
 
       .cardheader img {
-            border: 1px solid red;
+            margin: 0;
+      }
+
+      .cardheader .cardtext {
+            order: 3;
       }
 }
 
