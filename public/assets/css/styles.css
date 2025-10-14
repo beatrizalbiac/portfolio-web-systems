@@ -20,6 +20,10 @@ body {
       color:#111827;
 }
 
+.hamburger, .sidebar {
+      display: none;
+}
+
 .menu {
       display: flex;
       align-items: center;
@@ -40,6 +44,7 @@ body {
       color: #4b5563;
       font-weight: 500;
       font-size: 16px;
+      line-height: 24px;
       transition: opacity 0.2s;
 }
 
@@ -49,12 +54,16 @@ body {
 
 .cvbutton {
       display: flex;
-      padding: 5px 12px;        /* add some horizontal padding for nicer shape */
+      padding: 6px 16px;        /* add some horizontal padding for nicer shape */
       background-color: #111827;
       color: #f9fafb;
       border: none;             /* remove default border */
-      border-radius: 6px;       /* small rounded corners */
+      border-radius: 10px;       /* small rounded corners */
       text-decoration: none;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
 }
 .cvbutton:hover {
       opacity: 0.6;   /* slightly lighter on hover */
@@ -85,7 +94,6 @@ body {
 .introcontent {
       display: flex;
       flex-direction: column;
-      max-width: 1280px;
       padding-left:32px;
       max-width: 768px;
 }
@@ -134,8 +142,7 @@ p {
 .apps {     
       display: flex;    
       align-items: center;
-      gap: 1rem;
-      padding-top: 1rem;
+      gap: 12px;
 }
 
 .introimg {
@@ -346,6 +353,7 @@ h4 {
       gap: 48px;
 }
 
+/* Hay que fixear la imagen */
 .cardheader img{
       width: 64px;
       height: 64px;
@@ -535,17 +543,282 @@ h4 {
 
 /* para hacer que se vea bien en el móvil, falta por terminar */
 @media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
+      .nav {
+            padding: 16px 16px;
+            flex-direction: row;
+            align-content: center;
+            position: fixed;
+            z-index: 1200;
+            background:#fff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            width: 100%; 
+      }
+      
+      .menubar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+      }
 
-    .links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-    }
+      :root {
+            --animation-timing: 200ms ease-in-out;
+      }
+
+      .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-self: right;
+            gap: 4px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            z-index: 1201;
+            
+      }
+
+      .hamburger::before, .hamburger::after,.hamburger input {
+            content: "";
+            width: 18px;
+            height: 2px;
+            background-color: #4b5563;
+            border-radius: 50px;
+            transform-origin: left center;
+            transition: opacity var(--animation-timing), width var(--animation-timing), 
+             rotate var(--animation-timing), translate var(--animation-timing);
+            z-index: 10;
+      }
+
+      .hamburger input {
+            appearance: none;
+            padding: 0;
+            margin: 0;
+            outline: none;
+            pointer-events: none;
+            z-index: 10;
+      }
+
+      .hamburger:has(input:checked)::before {
+            rotate: 45deg;
+            width: 18px;
+            translate: 0 -0.45px;
+            z-index: 10;
+      }
+
+      .hamburger:has(input:checked)::after  {
+            rotate: -45deg;
+            width: 18px;
+            translate: 0 0.45px;
+            z-index: 10;
+      }
+
+      .hamburger input:checked {
+            opacity: 0;
+            width: 0;
+            z-index: 9999;
+      }
+
+      .sidebar {
+            position: fixed;
+            transition: translate var(--animation-timing);
+            top: 0;
+            right: 0;
+            translate: 100%;
+            width: 80%;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+            height: 100dvh;      
+            padding: 16px;
+            gap: 16px;
+            text-decoration: none;
+            background: #fff;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+      }
+
+      .overlay {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: #f3f4f6;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--animation-timing);
+            z-index: 1000;
+      }
+
+      /* Se activa cuando el menú está abierto */
+      .hamburger:has(input:checked) ~ .overlay {
+            opacity: 1;
+            pointer-events: all;
+      }
+
+      .hamburger:has(input:checked) + .sidebar {
+            translate: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 1200;
+            
+      }
+
+      .hamburger:has(input:checked) + .sidebar::before {
+            opacity: 1;
+            pointer-events: all;
+      }
+
+      body:has(.hamburger input:checked) {
+            overflow: hidden;
+            height: 100dvh;
+      }
+
+      .links {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid #f3f4f6;
+            border-bottom: 1px solid #f3f4f6;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            gap: 16px;
+            border-right: 0;
+            
+      }
+
+      .cvbutton {
+            /* width: calc(100% - 32px); */
+            margin: 0;
+            margin-right: 16px;
+            box-sizing: border-box;
+            justify-content: center;
+      }
+
+      .menubar p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+      }
+
+      .menu {
+            display:none;
+      }
+
+      .intro {
+            max-width: 100vw;
+            margin: 0;
+            padding: 64px 16px;
+            flex-direction: column-reverse;
+            align-items: center;
+      }
+
+      .introimg {
+            position: relative;
+            justify-content: center;
+            margin: 0;
+            margin-bottom: 50px;
+            
+      }
+
+      .introimg img{
+            width: 240px;
+            height: 280px;
+      }
+
+      .shadowintro {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            top: 20px;
+            left: -20px;
+            background-color: #ddd;
+            z-index: 1;
+      }
+
+      .introcontent {
+            padding: 0;
+      }
+
+      .introcontent h1 {
+            font-size: 36px;
+            line-height: 40px;
+            font-weight: 600;
+      }
+
+      .about {
+            padding: 64px 16px;
+            max-width: 100vw;
+      }
+
+      .aboutcontent {
+            margin-top: 24px;
+            flex-direction: column;
+            align-items: center;
+      }
+
+      .aboutimg {
+            margin: 0;
+            
+      }
+
+      .aboutimg img {
+            width: 280px;
+            height: 360px;
+      }
+
+      .shadowabout {
+            width: 320px;
+            height: 360px;
+            right: -20px;
+            top: 20px;
+      }
+
+      .abouttext h3 {
+            font-size: 24px;
+            line-height: 32px;
+      }
+
+      .lista li {
+            width: 40%;
+            max-width: 343px;
+      }
+
+      .skills{
+            padding: 64px 16px;
+      }
+
+      .h3 {
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;    
+      }
+
+      .skillsimgs {
+            max-width: 343px;
+            gap: 16px;
+      }
+
+      .experience {
+            padding: 64px 16px;
+      }
+
+      .card {
+            width: 343px;
+            flex-direction: column;
+      }
+
+      .cardheader {
+            flex-direction: column;
+      }
+
+      .cardheader img {
+            border: 1px solid red;
+      }
 }
 
+html, body {
+      overflow-x: hidden;
+      width: 100%;
+}
 
+* {
+  box-sizing: border-box;
+}

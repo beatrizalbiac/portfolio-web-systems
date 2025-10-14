@@ -12,7 +12,37 @@
    1. Estandarizar las tarjetas
    2. Estandarizar las secciones (display flex etc en css) -->
   <header class="nav">
-    <div class="logo">&lt;SS/&gt;</div>
+    <aside class="menubar">
+      <div class="logo">&lt;SS /&gt;</div>
+      <label class="hamburger">
+        <input type="checkbox"/>
+      </label>
+
+      <div class="sidebar">
+        <div class="logo">&lt;SS /&gt;</div>
+        <nav class="links">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p>Switch Theme<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
+          <path d="M16.0001 21.3337C18.9456 21.3337 21.3334 18.9458 21.3334 16.0003C21.3334 13.0548 18.9456 10.667 16.0001 10.667C13.0546 10.667 10.6667 13.0548 10.6667 16.0003C10.6667 18.9458 13.0546 21.3337 16.0001 21.3337Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 2.66699V5.33366" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 26.667V29.3337" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.57324 6.57324L8.45324 8.45324" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M23.5466 23.5469L25.4266 25.4269" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.66675 16H5.33341" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.6667 16H29.3334" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.45324 23.5469L6.57324 25.4269" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M25.4266 6.57324L23.5466 8.45324" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></p>
+        <a href="#" download class="cvbutton">Download CV</a>
+      </div>
+      <div class="overlay"></div>
+    </aside>
+    
+
     <div class="menu">
       <nav class="links">
         <a href="#about">About</a>
@@ -128,7 +158,7 @@
       <div class = "card">
       <!-- Para cada una de las tarjetas se repite el siguiente codigo -->
         <div class="cardheader">
-          <img src="assets/images/origen.png" alt="origen">
+          <img src="assets/images/python.webp" alt="origen">
           <div class="cardtext">
             <h4>Sr. Frontend Developer</h4>
             <ul>
