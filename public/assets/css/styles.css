@@ -279,6 +279,7 @@ h3 {
       font-weight: 400;
       color: #4b5563;
       margin-top: 16px;
+      text-align: center;
 }
 
 h4 {
@@ -400,6 +401,7 @@ h4 {
 .box {
       display: flex;
       background-color: #fff;
+      align-items: center;
       border-radius: 10px;
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); /* la sombra */
       transition: box-shadow 0.2s ease;
@@ -413,7 +415,7 @@ h4 {
 }
 
 .box img {
-      width: 480px;
+      width: 576px;
       height: 384px;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
@@ -421,6 +423,7 @@ h4 {
       flex-shrink: 0;
       padding: 48px 48px;
       background-color: #f9fafb;
+      
 }
 
 .box.rev img {
@@ -435,7 +438,7 @@ h4 {
       flex-direction: column;
       gap: 24px;
       padding: 48px 48px;
-      max-width: 480px;
+      width: 576px;
 
 }
 
@@ -508,6 +511,10 @@ h4 {
       max-width: 576px;
 }
 
+.contactcontent p {
+      padding-bottom: 8px;
+}
+
 .details {
       display: flex;
       flex-direction: column;
@@ -527,7 +534,7 @@ h4 {
 }
 
 .details h2 svg {
-  display: block; /* evita el espacio de línea debajo del SVG */
+      display: block; /* evita el espacio de línea debajo del SVG */
 }
 
 .copyright {
@@ -666,10 +673,10 @@ h4 {
             pointer-events: all;
       }
 
-      body:has(.hamburger input:checked) {
+      /* body:has(.hamburger input:checked) {
             overflow: hidden;
             height: 100dvh;
-      }
+      } */
 
       .links {
             display: flex;
@@ -684,7 +691,6 @@ h4 {
       }
 
       .cvbutton {
-            /* width: calc(100% - 32px); */
             margin: 0;
             margin-right: 16px;
             box-sizing: border-box;
@@ -794,6 +800,7 @@ h4 {
       .skillsimgs {
             max-width: 343px;
             gap: 16px;
+            padding-top: 24px;
       }
 
       .experience {
@@ -803,6 +810,7 @@ h4 {
       .card {
             width: 343px;
             flex-direction: column;
+            margin-top: 24px;
       }
 
       .cardheader {
@@ -821,7 +829,76 @@ h4 {
       .cardheader .cardtext {
             order: 3;
       }
-}
+
+      .h4 {
+            font-size: 18px;
+            line-height: 28px;
+      }
+
+      .work {
+            padding: 64px 16px;
+      }
+
+      .box {
+            width: 343px;
+            flex-direction: column;
+            margin-top: 24px;
+      }
+
+      .box img {
+            width: 343px;
+            height: 256px;
+            padding: 32px 32px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 0;
+      }
+
+      .box.rev {
+            flex-direction: column-reverse;
+      }
+
+      .box.rev img {
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 0;
+      }
+
+      .workcontent {
+            width: 343px;
+            padding: 32px 32px;
+      }
+
+      .testimonials {
+            padding: 64px 16px;
+      }
+
+      .testcards {
+            flex-direction: column;
+            width: 343px;
+            padding: 0;
+            margin-top: 24px;
+      }
+
+      .contact {
+            padding: 64px 16px;
+      }
+
+      .contactcontent {
+            max-width: 343px;
+            gap: 24px;
+      }
+
+      .details h2 {
+            font-size: 18px;
+            line-height: 28px;
+      }
+
+      .copyright {
+            padding: 24px 0;
+      }
+
+}      
 
 html, body {
       overflow-x: hidden;
