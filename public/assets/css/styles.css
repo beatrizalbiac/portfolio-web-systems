@@ -1,908 +1,901 @@
+/* formatted with prettier for vs code*/
 
 body {
-      margin: 0;
-      font-family: Inter, sans-serif;
+  margin: 0;
+  font-family: Inter, sans-serif; /* the font used in figma */
 }
 
+/* I tried to use the flexbox as much as posible. However, the dimensions, margins and paddings are those
+found in figma pretty much exactlly. So it can look odd depending on the zoom :) */
+
 .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 32px 112px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 112px;
 }
 
 .logo {
-      display: flex;
-      align-items: center;
-      line-height: 36px;
-      font-weight: 700;
-      font-size: 30px;
-      color:#111827;
+  display: flex;
+  align-items: center;
+  line-height: 36px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #111827;
 }
 
-.hamburger, .sidebar {
-      display: none;
+/* will be later used in the mobile view so i just hide it on the desktop ver */
+.hamburger,
+.sidebar {
+  display: none;
 }
 
 .menu {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem; /* controla la separación entre los links y el botón */
-      margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .links {
-      display: flex;
-      gap: 1.5rem;
-      border-right: 1px solid #ddd; /* línea separadora */
-      padding-right: 1.5rem;        /* espacio entre links y la línea */
-      
+  display: flex;
+  gap: 24px;
+  border-right: 1px solid #ddd; /* for the line between the links and the sun svg */
+  padding-right: 24px;
 }
 
 .links a {
-      text-decoration: none; /* quitar subrayado */
-      color: #4b5563;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      transition: opacity 0.2s;
+  text-decoration: none; /* to show them w/o the underline */
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  transition: opacity 0.2s;
 }
 
 .links a:hover {
-      opacity: 0.6;
+  opacity: 0.6;
 }
 
 .cvbutton {
-      display: flex;
-      padding: 6px 16px;        /* add some horizontal padding for nicer shape */
-      background-color: #111827;
-      color: #f9fafb;
-      border: none;             /* remove default border */
-      border-radius: 10px;       /* small rounded corners */
-      text-decoration: none;
-      justify-content: center;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
+  display: flex;
+  padding: 6px 16px;
+  background-color: #111827;
+  color: #f9fafb;
+  border: none;
+  border-radius: 10px; /* to make the corners rounded */
+  text-decoration: none;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 }
 .cvbutton:hover {
-      opacity: 0.6;   /* slightly lighter on hover */
+  opacity: 0.6;
 }
 
 .icon {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
+  width: 24px;
+  height: 24px;
+  cursor: pointer; /* So it makes the mouse pointer a hand when on top */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon svg {
-      width: 100%;
-      height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
+/* For the general section style. It could have been standarized between sections as they're kinda similar, but I
+realized late and it doesn't cut the code by that much */
 .intro {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 96px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 96px 80px;
 }
 
 .introcontent {
-      display: flex;
-      flex-direction: column;
-      padding-left:32px;
-      max-width: 768px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  max-width: 768px; /* so the paragraph sits nicely */
 }
 
 .introcontent h1 {
-      font-size: 60px;
-      line-height: 72px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 8px;
-      margin-top: 8px;
+  font-size: 60px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
+/* I standarized the most used text styles, they're based on the parameters given for each in the figma page*/
+
 p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 400;
-      color: #4b5563;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #4b5563;
 }
 
 .location {
-      display: flex;       /* pone icono + texto en la misma línea */
-      align-items: center;    /* centra verticalmente */
-      gap: 8px;            /* espacio entre icono y texto */
-      color: #4b5563;         /* color gris */
-      padding-bottom: 8px;
-      padding-top: 48px;
-}
-
-.location svg {
-      display: block; /* removes extra baseline spacing from inline SVGs */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  padding-bottom: 8px;
+  padding-top: 48px;
 }
 
 .status p {
-      display: flex;
-      align-items: center; 
-      gap: 8px;
-      padding-bottom: 48px;          
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 48px;
 }
 
-.status svg {
-      display: block; /* removes extra baseline spacing from inline SVGs */
-}
-
-.apps {     
-      display: flex;    
-      align-items: center;
-      gap: 12px;
+.apps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .introimg {
-      position: relative;
-      margin-left: 128px; /* reemplaza el padding por margin */
-      margin-right: 72px;
+  position: relative;
+  margin-left: 128px;
+  margin-right: 72px;
 }
 
 .introimg img {
-      object-fit: cover;
-      position: relative;
-      width: 280px;
-      height: 320px;
-      z-index: 2;
-      border: 10px solid #fff;
-      flex-shrink: 0;
-      
+  object-fit: cover; /* So it maintains the aspect ratio even if it has to be cut in some places */
+  position: relative; /* So it sits right in comparison to the grey rectangle */
+  width: 280px;
+  height: 320px;
+  z-index: 2; /* to put in on top  */
+  border: 10px solid #fff; /* for the solid white border you see in figma */
 }
 
 .shadowintro {
-      position: absolute;
-      top: 40px;       /* separa un poco del borde de la imagen */
-      left: 40px;     /* compensa el padding-left */
-      width: 280px;
-      height: 320px;    
-      border: 10px solid #fff;
-      background-color: #ddd;
-      z-index: 1;
+  position: absolute; /* the same */
+  top: 40px; /* it offsets the rectangle in comparison to the image */
+  left: 40px;
+  width: 280px;
+  height: 320px;
+  border: 10px solid #fff;
+  background-color: #ddd;
+  z-index: 1; 
 }
 
 .about {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* <-- centrado horizontal */
-      align-items: center;     /* <-- centrado vertical */
-      padding: 96px 80px;
-      background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 80px;
+  background-color: #f9fafb;
 }
 
+/* it isn't really a button buy yk */
 .button {
-      display: flex;
-      padding: 4px 20px;        /* add some horizontal padding for nicer shape */
-      background-color: #e5e7eb;
-      color: #4b5563;
-      border-radius: 10px;
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 500;
-      
+  display: flex;
+  padding: 4px 20px;
+  background-color: #e5e7eb;
+  color: #4b5563;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
 }
 
 .aboutcontent {
-      display: flex;
-      margin-top: 48px;
-      justify-content: center; /* alinea horizontalmente */
-      align-items: flex-start; /* parte superior alineada */
-      gap: 48px; /* espacio entre imagen y texto */
+  display: flex;
+  margin-top: 48px;
+  justify-content: center; 
+  align-items: flex-start;
+  gap: 48px;
 }
 
 .aboutimg {
-      position: relative;
-      margin-left: 72px; /* reemplaza el padding por margin */
-      margin-right: 144px;
+  position: relative;
+  margin-left: 72px;
+  margin-right: 144px;
 }
 
+/* pretty much the same as the img and grey rectangle from the intro, just diferent dimensions and places*/
 .aboutimg img {
-      object-fit: cover;
-      position: relative;
-      width: 400px;
-      height: 480px;
-      z-index: 2;
-      border: 10px solid #f9fafb;
-      flex-shrink: 0;
+  object-fit: cover;
+  position: relative;
+  width: 400px;
+  height: 480px;
+  z-index: 2;
+  border: 10px solid #f9fafb;
+  flex-shrink: 0;
 }
 
 .shadowabout {
-      position: absolute;
-      top: 40px;       /* separa un poco del borde de la imagen */
-      right: 40px;     /* compensa el padding-left */
-      width: 400px;
-      height: 480px;    
-      border: 10px solid #f9fafb;
-      background-color: #ddd;
-      z-index: 1;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 400px;
+  height: 480px;
+  border: 10px solid #f9fafb;
+  background-color: #ddd;
+  z-index: 1;
 }
 
 .abouttext {
-      margin: 0;
-      max-width: 584px;
+  margin: 0;
+  max-width: 584px;
 }
 
 .abouttext h3 {
-      font-size: 30px;
-      line-height: 36px;
-      font-weight: 600;
-      color: #111827;
-      margin: 0;
-      margin-bottom: 8px;
-      text-align: left;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 .abouttext p {
-      padding-top: 16px;
+  padding-top: 16px;
 }
 
 .lista {
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;     /* permite que los items bajen de línea */
-      gap: 10px 50px;       /* espacio entre filas y columnas */
-      list-style-type: disc;
-      padding-left: 20px;
-      padding-top: 16px;
-      color: #4b5563;
-      max-width: 600px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* so they are 2 and 2 */
+  gap: 10px 50px;
+  padding-left: 20px;
+  padding-top: 16px;
+  color: #4b5563;
+  max-width: 600px;
 }
 
 .lista li {
-      width: 45%;
-      max-width: 287px;          /* dos columnas aproximadamente */
+  width: 45%;
+  max-width: 287px; /* aprox. two columns */
 }
 
 .skills {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* <-- centrado horizontal */
-      align-items: center;     /* <-- centrado vertical */
-      padding: 96px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 80px;
 }
 
+/* for all the page */
 h3 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 28px;
-      font-weight: 400;
-      color: #4b5563;
-      margin-top: 16px;
-      text-align: center;
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #4b5563;
+  margin-top: 16px;
+  text-align: center;
 }
 
 h4 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 28px;
-      font-weight: 600;
-      color: #111827;
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #111827;
 }
- 
 
 .skillsimgs {
-      display: flex;
-      flex-wrap: wrap;        /* permite que se dividan en varias líneas */
-      justify-content: center;
-      padding-top: 48px;
-      gap: 48px;              /* espacio entre iconos */
-      max-width: 700px;       /* ajusta según tu diseño */
-      margin: 0 auto; 
+  display: flex;
+  flex-wrap: wrap; /* for there to be two lines */
+  justify-content: center;
+  padding-top: 48px;
+  gap: 48px;
+  max-width: 700px; /* so the lines are balanced, personal preference */
+  margin: 0 auto;
 }
 
 .skill {
-      display: flex;
-      flex-direction: column; /* imagen arriba, texto abajo */
-      align-items: center;
-      width: 100px;           /* ancho fijo de cada bloque */
-      text-align: center;
+  display: flex;
+  flex-direction: column; /* so the images are on top of the text (row is the default) */
+  align-items: center;
+  width: 100px;
+  text-align: center;
 }
 
 .skill img {
-      width: 64px;
-      height: 64px;
-      object-fit: contain;
-      padding-bottom: 8px;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  padding-bottom: 8px;
 }
 
 .experience {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* <-- centrado horizontal */
-      align-items: center;     /* <-- centrado vertical */  
-      background-color: #f9fafb;
-      padding: 96px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafb;
+  padding: 96px 80px;
 }
 
 .cards {
-      display: flex;
-      flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 32px 32px;
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); /* la sombra */
-      transition: box-shadow 0.2s ease;
-      display: flex;
-      width: 896px;
-      flex-direction: column;
-      margin-top: 48px;
-      
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 32px 32px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); /* for the shadow, values chosen pretty much at random */
+  transition: box-shadow 0.2s ease; /* so when you hover the transition is smoother between the two values, not really relevant */
+  display: flex;
+  width: 896px;
+  flex-direction: column;
+  margin-top: 48px;
 }
 
 .card:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* más fuerte al pasar el ratón */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* the shadow disipates (kinda) when hovering over the card */
 }
 
 .cardheader {
-      display: flex;
-      justify-content: space-between; /* logo-texto a la izq, fecha a la der */
-      align-items: flex-start;
-      gap: 48px;
+  display: flex;
+  gap: 48px;
 }
 
-/* Hay que fixear la imagen */
-.cardheader img{
-      width: 206px;
-      object-fit: contain;
-      flex-shrink: 0;
-      height: 50px;
+.cardheader img {
+  width: 206px;
+  object-fit: contain;
+  height: 50px;
 }
 
-.cardtext {
-      flex: 1;
-      max-width: 384px;
+.cardtext { 
+  max-width: 384px;
 }
 
 .cardtext h4 {
-      padding-bottom: 16px;
+  padding-bottom: 16px;
 }
 
 .cardtext ul {
-      margin: 0;
-      padding-left: 20px;
-      color: #4b5563;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 400;
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .date {
-      white-space: nowrap; /* evita salto de línea */
-      color: #4b5563;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 400;
-      margin: 0;
+  white-space: nowrap; /* it prevents it from going into the next line  */
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .work {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* <-- centrado horizontal */
-      align-items: center;     /* <-- centrado vertical */
-      padding: 96px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding: 96px 80px;
 }
 
+/* The main stuff is the same as the other card, it could be considered standarizing them in some way */
 .box {
-      display: flex;
-      background-color: #fff;
-      align-items: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); /* la sombra */
-      transition: box-shadow 0.2s ease;
-      width: 1152px;
-      flex-direction: row;
-      margin-top: 48px;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+  width: 1152px;
+  flex-direction: row;
+  margin-top: 48px;
 }
 
 .box:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* más fuerte al pasar el ratón */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .box img {
-      width: 576px;
-      height: 384px;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      object-fit: contain;
-      flex-shrink: 0;
-      padding: 48px 48px;
-      background-color: #f9fafb;
-      
+  width: 576px;
+  height: 384px;
+  /* so they have the outside corners rounded */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  object-fit: contain;
+  padding: 48px 48px;
+  background-color: #f9fafb; /* so it does the half grey half white effect */
 }
 
+/* because it's on the other side I have to manually adjust the roundedcorners */
 .box.rev img {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .workcontent {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding: 48px 48px;
-      width: 576px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px 48px;
+  width: 576px;
 }
 
 .workbuttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .testimonials {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* <-- centrado horizontal */
-      align-items: center;     /* <-- centrado vertical */
-      padding: 96px 80px;
-      background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 80px;
+  background-color: #f9fafb;
 }
 
-.testcards{
-      display: flex;
-      flex-direction: row;
-      gap: 48px;
-      padding: 48px 32px;
-      width: 1126px;
-      padding-bottom: 0;
+.testcards {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  padding: 48px 32px;
+  width: 1126px;
+  padding-bottom: 0;
 }
 
-.testcard{
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); /* la sombra */
-      transition: box-shadow 0.2s ease;
-      padding: 48px 48px;
+/* pretty much the same as the other cards */
+.testcard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); 
+  transition: box-shadow 0.2s ease;
+  padding: 48px 48px;
 }
 
 .testcard:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* más fuerte al pasar el ratón */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .refcontact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .refcontact p {
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 400;
-      color: #4b5563;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #4b5563;
 }
 
 .contact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 96px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 96px 80px;
 }
 
 .contactcontent {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 48px;
-      max-width: 576px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  max-width: 576px;
 }
 
 .contactcontent p {
-      padding-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .details {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .details h2 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 20px;
-      margin: 0;
-      font-size: 36px;
-      line-height: 40px;
-      font-weight: 600;
-}
-
-.details h2 svg {
-      display: block; /* evita el espacio de línea debajo del SVG */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
 }
 
 .copyright {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      background-color: #f9fafb;
-      padding: 24px 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #f9fafb;
+  padding: 24px 80px;
 }
 
-
-/* para hacer que se vea bien en el móvil, falta por terminar */
+/* for the phone version. I recomend you set the view to 375 px bc thats the width on figma, or to use your phone.
+But it should also work with other widths, it just won't be as accurate */
 @media (max-width: 768px) {
-      .nav {
-            padding: 16px 16px;
-            flex-direction: row;
-            align-content: center;
-            position: fixed;
-            z-index: 1200;
-            background:#fff;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-            width: 100%; 
-      }
-      
-      .menubar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            position: relative;
-      }
+  .nav {
+    padding: 16px 16px;
+    flex-direction: row;
+    align-content: center;
+    position: fixed;
+    z-index: 1200;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+  }
 
-      :root {
-            --animation-timing: 200ms ease-in-out;
-      }
+  .menubar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
 
-      .hamburger {
-            display: flex;
-            flex-direction: column;
-            justify-self: right;
-            gap: 4px;
-            cursor: pointer;
-            position: absolute;
-            right: 0;
-            z-index: 1201;
-            
-      }
+  /* as explained on the README, this is based on a youtube video, so there's css not shown in class */
+  :root {
+    --animation-timing: 200ms ease-in-out; /* to time all the "animations" so they match time-wise */
+  }
 
-      .hamburger::before, .hamburger::after,.hamburger input {
-            content: "";
-            width: 18px;
-            height: 2px;
-            background-color: #4b5563;
-            border-radius: 50px;
-            transform-origin: left center;
-            transition: opacity var(--animation-timing), width var(--animation-timing), 
-             rotate var(--animation-timing), translate var(--animation-timing);
-            z-index: 10;
-      }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-self: right;
+    gap: 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    z-index: 1201; /* a lot of testing has gone to these values, they could be reduced an ajusted but it might also
+    mess up things */
+  }
 
-      .hamburger input {
-            appearance: none;
-            padding: 0;
-            margin: 0;
-            outline: none;
-            pointer-events: none;
-            z-index: 10;
-      }
+  /* the format fot the three lines that form the "hamburger" menu */
+  .hamburger::before,
+  .hamburger::after,
+  .hamburger input {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background-color: #4b5563;
+    border-radius: 50px;
+    transform-origin: left center; /* so they form the x right */
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+      rotate var(--animation-timing), translate var(--animation-timing);
+    z-index: 10;
+  }
 
-      .hamburger:has(input:checked)::before {
-            rotate: 45deg;
-            width: 18px;
-            translate: 0 -0.45px;
-            z-index: 10;
-      }
+  .hamburger input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+    z-index: 10;
+  }
 
-      .hamburger:has(input:checked)::after  {
-            rotate: -45deg;
-            width: 18px;
-            translate: 0 0.45px;
-            z-index: 10;
-      }
+  /* the code for when the menu has been "clicked on"/opened */
+  .hamburger:has(input:checked)::before {
+    rotate: 45deg;
+    width: 18px;
+    translate: 0 -0.45px;
+    z-index: 10;
+  }
 
-      .hamburger input:checked {
-            opacity: 0;
-            width: 0;
-            z-index: 9999;
-      }
+  .hamburger:has(input:checked)::after {
+    rotate: -45deg;
+    width: 18px;
+    translate: 0 0.45px;
+    z-index: 10;
+  }
 
-      .sidebar {
-            position: fixed;
-            transition: translate var(--animation-timing);
-            top: 0;
-            right: 0;
-            translate: 100%;
-            width: 80%;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
-            height: 100dvh;      
-            padding: 16px;
-            gap: 16px;
-            text-decoration: none;
-            background: #fff;
-            overflow-y: auto;
-            overscroll-behavior: contain;
-      }
+  .hamburger input:checked {
+    opacity: 0;
+    width: 0;
+    z-index: 9999;
+  }
 
-      .overlay {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: #f3f4f6;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity var(--animation-timing);
-            z-index: 1000;
-      }
+  /* the menu that gets opened */
+  .sidebar {
+    position: fixed;
+    transition: translate var(--animation-timing);
+    top: 0;
+    right: 0;
+    translate: 100%;
+    width: 80%;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    height: 100dvh;
+    padding: 16px;
+    gap: 16px;
+    text-decoration: none;
+    background: #fff;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
 
-      /* Se activa cuando el menú está abierto */
-      .hamburger:has(input:checked) ~ .overlay {
-            opacity: 1;
-            pointer-events: all;
-      }
+  /* for the background to become grey. I'd wanna make it so you cannot scroll on the background while the menu 
+  is opened, but if I make it so you can't the links don't take you where they should */
+  .overlay {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: #f3f4f6;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animation-timing);
+    z-index: 1000;
+  }
 
-      .hamburger:has(input:checked) + .sidebar {
-            translate: 0;
-            display: flex;
-            flex-direction: column;
-            z-index: 1200;
-            
-      }
+  /* it activates when the menu is opened */
+  .hamburger:has(input:checked) ~ .overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-      .hamburger:has(input:checked) + .sidebar::before {
-            opacity: 1;
-            pointer-events: all;
-      }
+  .hamburger:has(input:checked) + .sidebar {
+    translate: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1200;
+  }
 
-      /* body:has(.hamburger input:checked) {
-            overflow: hidden;
-            height: 100dvh;
-      } */
+  .hamburger:has(input:checked) + .sidebar::before {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-      .links {
-            display: flex;
-            flex-direction: column;
-            border-top: 1px solid #f3f4f6;
-            border-bottom: 1px solid #f3f4f6;
-            padding-top: 16px;
-            padding-bottom: 16px;
-            gap: 16px;
-            border-right: 0;
-            
-      }
+  /* css for adjusting the pre-existing stuff to the mobile ver */
+  .links {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #f3f4f6;
+    border-bottom: 1px solid #f3f4f6;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 16px;
+    border-right: 0;
+  }
 
-      .cvbutton {
-            margin: 0;
-            margin-right: 16px;
-            box-sizing: border-box;
-            justify-content: center;
-      }
+  .cvbutton {
+    margin: 0;
+    margin-right: 16px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
 
-      .menubar p {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-      }
+  .menubar p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-      .menu {
-            display:none;
-      }
+  .menu {
+    display: none;
+  }
 
-      .intro {
-            max-width: 100vw;
-            margin: 0;
-            padding: 64px 16px;
-            flex-direction: column-reverse;
-            align-items: center;
-      }
+  .intro {
+    max-width: 100vw;
+    margin: 0;
+    padding: 64px 16px;
+    flex-direction: column-reverse; /* so the img is on top */
+    align-items: center;
+  }
 
-      .introimg {
-            position: relative;
-            justify-content: center;
-            margin: 0;
-            margin-bottom: 50px;
-            
-      }
+  .introimg {
+    position: relative;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 50px;
+  }
 
-      .introimg img{
-            width: 240px;
-            height: 280px;
-      }
+  .introimg img {
+    width: 240px;
+    height: 280px;
+  }
 
-      .shadowintro {
-            position: absolute;
-            width: 280px;
-            height: 280px;
-            top: 20px;
-            left: -20px;
-            background-color: #ddd;
-            z-index: 1;
-      }
+  .shadowintro {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    /* to change the position. Adjusted to over correct because of what has already been set on the desktop ver. */
+    top: 20px;
+    left: -20px;
+    background-color: #ddd;
+    z-index: 1;
+  }
 
-      .introcontent {
-            padding: 0;
-      }
+  .introcontent {
+    padding: 0;
+  }
 
-      .introcontent h1 {
-            font-size: 36px;
-            line-height: 40px;
-            font-weight: 600;
-      }
+  /* adjust the texts following the figma guide*/
+  .introcontent h1 {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 600;
+  }
 
-      .about {
-            padding: 64px 16px;
-            max-width: 100vw;
-      }
+  .about {
+    padding: 64px 16px;
+    max-width: 100vw;
+  }
 
-      .aboutcontent {
-            margin-top: 24px;
-            flex-direction: column;
-            align-items: center;
-      }
+  .aboutcontent {
+    margin-top: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .aboutimg {
-            margin: 0;
-            
-      }
+  .aboutimg {
+    margin: 0;
+  }
 
-      .aboutimg img {
-            width: 280px;
-            height: 360px;
-      }
+  .aboutimg img {
+    width: 280px;
+    height: 360px;
+  }
 
-      .shadowabout {
-            width: 320px;
-            height: 360px;
-            right: -20px;
-            top: 20px;
-      }
+  .shadowabout {
+    width: 320px;
+    height: 360px;
+    right: -20px;
+    top: 20px;
+  }
 
-      .abouttext h3 {
-            font-size: 24px;
-            line-height: 32px;
-      }
+  .abouttext h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
 
-      .lista li {
-            width: 40%;
-            max-width: 343px;
-      }
+  .lista li {
+    width: 40%;
+    max-width: 343px;
+  }
 
-      .skills{
-            padding: 64px 16px;
-      }
+  .skills {
+    padding: 64px 16px;
+  }
 
-      .h3 {
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;    
-      }
+  .h3 {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+  }
 
-      .skillsimgs {
-            max-width: 343px;
-            gap: 16px;
-            padding-top: 24px;
-      }
+  .skillsimgs {
+    max-width: 343px;
+    gap: 16px;
+    padding-top: 24px;
+  }
 
-      .experience {
-            padding: 64px 16px;
-      }
+  .experience {
+    padding: 64px 16px;
+  }
 
-      .card {
-            width: 343px;
-            flex-direction: column;
-            margin-top: 24px;
-      }
+  .card {
+    width: 343px;
+    flex-direction: column;
+    margin-top: 24px;
+  }
 
-      .cardheader {
-            flex-direction: column;
-            gap: 16px;
-      }
+  .cardheader {
+    flex-direction: column;
+    gap: 16px;
+  }
 
-      .cardheader .date {
-            order: 2;
-      }
+  /* the order is to make the content go: img -> date -> text */
+  .cardheader .date {
+    order: 2;
+  }
 
-      .cardheader img {
-            margin: 0;
-      }
+  .cardheader img {
+    margin: 0;
+  }
 
-      .cardheader .cardtext {
-            order: 3;
-      }
+  .cardheader .cardtext {
+    order: 3;
+  }
 
-      .h4 {
-            font-size: 18px;
-            line-height: 28px;
-      }
+  .h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
 
-      .work {
-            padding: 64px 16px;
-      }
+  .work {
+    padding: 64px 16px;
+  }
 
-      .box {
-            width: 343px;
-            flex-direction: column;
-            margin-top: 24px;
-      }
+  .box {
+    width: 343px;
+    flex-direction: column;
+    margin-top: 24px;
+  }
 
-      .box img {
-            width: 343px;
-            height: 256px;
-            padding: 32px 32px;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 0;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 0;
-      }
+  .box img {
+    width: 343px;
+    height: 256px;
+    padding: 32px 32px;
+    /* I have to compensate for the desktop ver. */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0;
+  }
 
-      .box.rev {
-            flex-direction: column-reverse;
-      }
+  .box.rev {
+    flex-direction: column-reverse; /* to make it the same as the others in this version*/
+  }
 
-      .box.rev img {
-            border-top-left-radius: 10px;
-            border-bottom-right-radius: 0;
-      }
+  .box.rev img {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0;
+  }
 
-      .workcontent {
-            width: 343px;
-            padding: 32px 32px;
-      }
+  .workcontent {
+    width: 343px;
+    padding: 32px 32px;
+  }
 
-      .testimonials {
-            padding: 64px 16px;
-      }
+  .testimonials {
+    padding: 64px 16px;
+  }
 
-      .testcards {
-            flex-direction: column;
-            width: 343px;
-            padding: 0;
-            margin-top: 24px;
-      }
+  .testcards {
+    flex-direction: column;
+    width: 343px;
+    padding: 0;
+    margin-top: 24px;
+  }
 
-      .contact {
-            padding: 64px 16px;
-      }
+  .contact {
+    padding: 64px 16px;
+  }
 
-      .contactcontent {
-            max-width: 343px;
-            gap: 24px;
-      }
+  .contactcontent {
+    max-width: 343px;
+    gap: 24px;
+  }
 
-      .details h2 {
-            font-size: 18px;
-            line-height: 28px;
-      }
+  .details h2 {
+    font-size: 18px;
+    line-height: 28px;
+  }
 
-      .copyright {
-            padding: 24px 0;
-      }
+  .copyright {
+    padding: 24px 0;
+  }
+}
 
-}      
-
-html, body {
-      overflow-x: hidden;
-      width: 100%;
+/* because it wasn't showing all the pixels in the mobile version (and there was some horizontal scroll) */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 * {
