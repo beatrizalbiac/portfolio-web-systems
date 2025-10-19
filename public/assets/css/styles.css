@@ -241,6 +241,7 @@ p {
       color: #111827;
       margin: 0;
       margin-bottom: 8px;
+      text-align: left;
 }
 
 .abouttext p {
@@ -356,11 +357,10 @@ h4 {
 
 /* Hay que fixear la imagen */
 .cardheader img{
-      width: 64px;
-      height: 64px;
+      width: 206px;
       object-fit: contain;
       flex-shrink: 0;
-      margin-right: 104px;
+      height: 50px;
 }
 
 .cardtext {
