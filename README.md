@@ -24,4 +24,11 @@ hosting url: https://portfolio-bad.web.app
 - mobile < 789px *(it's recomended to use 375px so it's as true to the figma design as possible)*
 
 ## Some screenshots as preview:
-![Desktop Screenshot](public/assets/images/telefonica.png)
+**Desktop:**
+![Desktop-1](public/assets/images/telefonica.png)
+![Desktop-2]()
+![Desktop-3]()
+![Desktop-4]()
+![Mobile-1]()
+![Mobile-2]()
+![Mobile-3]()
