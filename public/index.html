@@ -1,368 +1,961 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Personal Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/fonts/inter.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <!-- Cosas a modificar:
-   1. Estandarizar las tarjetas
-   2. Estandarizar las secciones (display flex etc en css) -->
-  <header class="nav">
-    <aside class="menubar">
-      <div class="logo">&lt;SS /&gt;</div>
-      <label class="hamburger">
-        <input type="checkbox"/>
-      </label>
-
-      <div class="sidebar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/fonts/inter.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Code formated with prettier :) -->
+    <header class="nav">
+      <aside class="menubar">
         <div class="logo">&lt;SS /&gt;</div>
+        <label class="hamburger">
+          <input type="checkbox" />
+        </label>
+
+        <div class="sidebar">
+          <div class="logo">&lt;SS /&gt;</div>
+          <nav class="links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <p>
+            Switch Theme<svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M16.0001 21.3337C18.9456 21.3337 21.3334 18.9458 21.3334 16.0003C21.3334 13.0548 18.9456 10.667 16.0001 10.667C13.0546 10.667 10.6667 13.0548 10.6667 16.0003C10.6667 18.9458 13.0546 21.3337 16.0001 21.3337Z"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 2.66699V5.33366"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 26.667V29.3337"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.57324 6.57324L8.45324 8.45324"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M23.5466 23.5469L25.4266 25.4269"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.66675 16H5.33341"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M26.6667 16H29.3334"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.45324 23.5469L6.57324 25.4269"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M25.4266 6.57324L23.5466 8.45324"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </p>
+          <a href="#" download class="cvbutton">Download CV</a>
+        </div>
+        <div class="overlay"></div>
+      </aside>
+
+      <div class="menu">
         <nav class="links">
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#contact">Contact</a>
         </nav>
-        <p>Switch Theme<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
-          <path d="M16.0001 21.3337C18.9456 21.3337 21.3334 18.9458 21.3334 16.0003C21.3334 13.0548 18.9456 10.667 16.0001 10.667C13.0546 10.667 10.6667 13.0548 10.6667 16.0003C10.6667 18.9458 13.0546 21.3337 16.0001 21.3337Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 2.66699V5.33366" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 26.667V29.3337" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6.57324 6.57324L8.45324 8.45324" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M23.5466 23.5469L25.4266 25.4269" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2.66675 16H5.33341" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M26.6667 16H29.3334" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8.45324 23.5469L6.57324 25.4269" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M25.4266 6.57324L23.5466 8.45324" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg></p>
+        <svg
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 32 32"
+          fill="none"
+        >
+          <path
+            d="M16.0001 21.3337C18.9456 21.3337 21.3334 18.9458 21.3334 16.0003C21.3334 13.0548 18.9456 10.667 16.0001 10.667C13.0546 10.667 10.6667 13.0548 10.6667 16.0003C10.6667 18.9458 13.0546 21.3337 16.0001 21.3337Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 2.66699V5.33366"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 26.667V29.3337"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6.57324 6.57324L8.45324 8.45324"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M23.5466 23.5469L25.4266 25.4269"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2.66675 16H5.33341"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M26.6667 16H29.3334"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.45324 23.5469L6.57324 25.4269"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M25.4266 6.57324L23.5466 8.45324"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
         <a href="#" download class="cvbutton">Download CV</a>
       </div>
-      <div class="overlay"></div>
-    </aside>
-    
-
-    <div class="menu">
-      <nav class="links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" fill="none">
-        <path d="M16.0001 21.3337C18.9456 21.3337 21.3334 18.9458 21.3334 16.0003C21.3334 13.0548 18.9456 10.667 16.0001 10.667C13.0546 10.667 10.6667 13.0548 10.6667 16.0003C10.6667 18.9458 13.0546 21.3337 16.0001 21.3337Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 2.66699V5.33366" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 26.667V29.3337" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6.57324 6.57324L8.45324 8.45324" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M23.5466 23.5469L25.4266 25.4269" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M2.66675 16H5.33341" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M26.6667 16H29.3334" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8.45324 23.5469L6.57324 25.4269" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M25.4266 6.57324L23.5466 8.45324" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <a href="#" download class="cvbutton">Download CV</a>
-    </div>
-  </header>
-  <main class="intro">
-    <div class="introcontent">
-      <h1>Hi, I'm Bea</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-        sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-        Pulvinar vivamus fringilla lacus nec metus bibendum egestas.</p>
-      <div class="location">
-          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26.6666 13.3337C26.6666 21.3337 15.9999 29.3337 15.9999 29.3337C15.9999 29.3337 5.33325 21.3337 5.33325 13.3337C5.33325 10.5047 6.45706 7.79157 8.45745 5.79119C10.4578 3.7908 13.1709 2.66699 15.9999 2.66699C18.8289 2.66699 21.542 3.7908 23.5424 5.79119C25.5428 7.79157 26.6666 10.5047 26.6666 13.3337Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 17.333C18.2091 17.333 20 15.5421 20 13.333C20 11.1239 18.2091 9.33301 16 9.33301C13.7909 9.33301 12 11.1239 12 13.333C12 15.5421 13.7909 17.333 16 17.333Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg><p>Zaragoza, España</p>
+    </header>
+    <main class="intro">
+      <div class="introcontent">
+        <h1>Hi, I'm Bea</h1>
+        <p>
+          I'm a computer science and artificial intelligence student as of right
+          now. I want to focus in data as a whole, but more specifically, I'm
+          interested in using AI to manage data in many diferent ways, mainly to
+          aid those working in the field, and help optimize and reduce the
+          workload in different processes. I don't have much experience in the
+          field, but I'm always open to expand my knowledge and my abilities.
+        </p>
+        <div class="location">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M26.6666 13.3337C26.6666 21.3337 15.9999 29.3337 15.9999 29.3337C15.9999 29.3337 5.33325 21.3337 5.33325 13.3337C5.33325 10.5047 6.45706 7.79157 8.45745 5.79119C10.4578 3.7908 13.1709 2.66699 15.9999 2.66699C18.8289 2.66699 21.542 3.7908 23.5424 5.79119C25.5428 7.79157 26.6666 10.5047 26.6666 13.3337Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 17.333C18.2091 17.333 20 15.5421 20 13.333C20 11.1239 18.2091 9.33301 16 9.33301C13.7909 9.33301 12 11.1239 12 13.333C12 15.5421 13.7909 17.333 16 17.333Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <p>Zaragoza, Spain</p>
+        </div>
+        <div class="status">
+          <p>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="8" y="8" width="8" height="8" rx="4" fill="#10B981" />
+            </svg>
+            Available for new projects
+          </p>
+        </div>
+        <div class="apps">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.9999 29.3337V24.0003C20.1854 22.33 19.7065 20.6538 18.6666 19.3337C22.6666 19.3337 26.6666 16.667 26.6666 12.0003C26.7732 10.3337 26.3066 8.69366 25.3332 7.33366C25.7066 5.80033 25.7066 4.20033 25.3332 2.66699C25.3332 2.66699 23.9999 2.66699 21.3332 4.66699C17.8132 4.00033 14.1866 4.00033 10.6666 4.66699C7.99989 2.66699 6.66655 2.66699 6.66655 2.66699C6.26655 4.20033 6.26655 5.80033 6.66655 7.33366C5.69572 8.68817 5.22452 10.3374 5.33322 12.0003C5.33322 16.667 9.33322 19.3337 13.3332 19.3337C12.8132 19.987 12.4266 20.7337 12.1999 21.5337C11.9732 22.3337 11.9066 23.1737 11.9999 24.0003V29.3337"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12.0001 23.9997C5.98675 26.6663 5.33341 21.333 2.66675 21.333"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M29.3334 5.33369C29.3334 5.33369 28.4001 8.13369 26.6667 9.86702C28.8001 23.2004 14.1334 32.9337 2.66675 25.3337C5.60008 25.467 8.53341 24.5337 10.6667 22.667C4.00008 20.667 0.666748 12.8004 4.00008 6.66702C6.93341 10.1337 11.4667 12.1337 16.0001 12.0004C14.8001 6.40036 21.3334 3.20036 25.3334 6.93369C26.8001 6.93369 29.3334 5.33369 29.3334 5.33369Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.66675 7.33366C6.66675 6.09598 7.15841 4.909 8.03358 4.03383C8.90875 3.15866 10.0957 2.66699 11.3334 2.66699H16.0001V12.0003H11.3334C10.0957 12.0003 8.90875 11.5087 8.03358 10.6335C7.15841 9.75832 6.66675 8.57134 6.66675 7.33366Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 2.66699H20.6667C21.2795 2.66699 21.8863 2.7877 22.4525 3.02222C23.0187 3.25674 23.5332 3.60049 23.9665 4.03383C24.3998 4.46717 24.7436 4.98162 24.9781 5.5478C25.2126 6.11399 25.3333 6.72082 25.3333 7.33366C25.3333 7.94649 25.2126 8.55333 24.9781 9.11951C24.7436 9.6857 24.3998 10.2001 23.9665 10.6335C23.5332 11.0668 23.0187 11.4106 22.4525 11.6451C21.8863 11.8796 21.2795 12.0003 20.6667 12.0003H16V2.66699Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 16.6667C16 16.0538 16.1207 15.447 16.3552 14.8808C16.5898 14.3146 16.9335 13.8002 17.3668 13.3668C17.8002 12.9335 18.3146 12.5898 18.8808 12.3552C19.447 12.1207 20.0538 12 20.6667 12C21.2795 12 21.8863 12.1207 22.4525 12.3552C23.0187 12.5898 23.5332 12.9335 23.9665 13.3668C24.3998 13.8002 24.7436 14.3146 24.9781 14.8808C25.2126 15.447 25.3333 16.0538 25.3333 16.6667C25.3333 17.2795 25.2126 17.8863 24.9781 18.4525C24.7436 19.0187 24.3998 19.5332 23.9665 19.9665C23.5332 20.3998 23.0187 20.7436 22.4525 20.9781C21.8863 21.2126 21.2795 21.3333 20.6667 21.3333C20.0538 21.3333 19.447 21.2126 18.8808 20.9781C18.3146 20.7436 17.8002 20.3998 17.3668 19.9665C16.9335 19.5332 16.5898 19.0187 16.3552 18.4525C16.1207 17.8863 16 17.2795 16 16.6667Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6.66675 25.9997C6.66675 24.762 7.15841 23.575 8.03358 22.6998C8.90875 21.8247 10.0957 21.333 11.3334 21.333H16.0001V25.9997C16.0001 27.2374 15.5084 28.4243 14.6332 29.2995C13.7581 30.1747 12.5711 30.6663 11.3334 30.6663C10.0957 30.6663 8.90875 30.1747 8.03358 29.2995C7.15841 28.4243 6.66675 27.2374 6.66675 25.9997Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6.66675 16.6667C6.66675 15.429 7.15841 14.242 8.03358 13.3668C8.90875 12.4917 10.0957 12 11.3334 12H16.0001V21.3333H11.3334C10.0957 21.3333 8.90875 20.8417 8.03358 19.9665C7.15841 19.0913 6.66675 17.9043 6.66675 16.6667Z"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
       </div>
-      <div class="status">
-        <p><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="8" height="8" rx="4" fill="#10B981"/></svg>
-          Disponible para nuevos proyectos</p>
+      <div class="introimg">
+        <img src="assets/images/gato.jpg" alt="Gato" />
+        <div class="shadowintro"></div>
+      </div>
+    </main>
+    <section id="about" class="about">
+      <h2 class="button">About Me</h2>
+      <div class="aboutcontent">
+        <div class="aboutimg">
+          <img src="assets/images/gato2.jpg" alt="Gato2" />
+          <div class="shadowabout"></div>
+        </div>
+        <div class="abouttext">
+          <h3>Curious about me? Here you have it:</h3>
+          <p>
+            I'm a passionate
+            <span style="font-weight: 600"
+              >computer science and artificial intelligence</span
+            >
+            student who focuses on data analysis, AI applications, and
+            algorithmic problem-solving. I love exploring how intelligent
+            systems can optimize real-world processes, from evolutionary models
+            to predictive analytics. Building clear, efficient, and
+            interpretable solutions matters deeply to me — both in code and in
+            design.
+          </p>
+          <p>
+            I began my journey into computing through curiosity for how things
+            work and evolved into developing complex simulations and data-driven
+            projects using Python, SQL, and C++. Over time, I’ve applied AI
+            concepts to study dynamic systems, such as predator–prey coevolution
+            models and evolutionary sensor networks, always aiming to balance
+            performance with realism.
+          </p>
+          <p>
+            Now I’m expanding my skill set into areas like
+            <span style="text-decoration: underline">data engineering</span> and
+            <span style="text-decoration: underline"
+              >applied machine learning</span
+            >, experimenting with frameworks and visualization tools to make AI
+            models more transparent and accessible.
+          </p>
+          <p>
+            When I’m not deep in code or research, you’ll probably find me
+            exploring new tools, organizing data workflows, or designing systems
+            that make complex ideas clearer and more efficient. I like clean
+            structure, creative problem-solving, and finding smart ways to
+            connect logic with usability.
+          </p>
+          <p>Esto es:</p>
+          <ul class="lista">
+            <li>
+              B.Sc. in CS and AI
+              <span style="font-style: italic">(in progress)</span>
+            </li>
+            <li>Passionate about data and optimization</li>
+            <li>Avid learner</li>
+            <li>Detail-oriented</li>
+          </ul>
+          <p>
+            I’m always open to collaborating on new projects or research related
+            to AI and data. Feel free to reach out if you’d like to discuss
+            ideas or share perspectives.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="skills">
+      <h2 class="button">Skills</h2>
+      <h3>The skills, tools and technologies I am really good at:</h3>
+      <div class="skillsimgs">
+        <div class="skill">
+          <img src="assets/images/python.webp" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/c.png" alt="C" />
+          <p>C</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/cassandra.png" alt="Cassandra" />
+          <p>Cassandra</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/excell.png" alt="Excel" />
+          <p>Excel</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/figma.png" alt="Figma" />
+          <p>Figma</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/git.png" alt="Git" />
+          <p>Git</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/mongodb.webp" alt="MongoDB" />
+          <p>MongoDB</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/neo4j.png" alt="Neo4j" />
+          <p>Neo4j</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/postgresql.png" alt="PostgreSQL" />
+          <p>PostgreSQL</p>
+        </div>
+        <div class="skill">
+          <img src="assets/images/redis.png" alt="Redis" />
+          <p>Redis</p>
+        </div>
+      </div>
+    </section>
+    <section class="experience">
+      <h2 class="button">Experience</h2>
+      <h3>Here is a quick summary of my most recent experiences:</h3>
+      <div class="cards">
+        <div class="card">
+          <!-- Para cada una de las tarjetas se repite el siguiente codigo -->
+          <div class="cardheader">
+            <img src="assets/images/bbva.png" alt="bbva" />
+            <div class="cardtext">
+              <h4>Junior Data Scientist</h4>
+              <ul>
+                <li>
+                  Developed customer behavior prediction models using clustering
+                  techniques and trend analysis.
+                </li>
+                <li>
+                  Integrated AI-based solutions into business analytics
+                  workflows through APIs and cloud services.
+                </li>
+                <li>
+                  Cleaned, modeled, and analyzed data using pandas, NumPy, and
+                  SQL on PostgreSQL databases.
+                </li>
+              </ul>
+            </div>
+            <p class="date">Nov 2022 – Present</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardheader">
+            <img src="assets/images/indra.png" alt="indra" />
+            <div class="cardtext">
+              <h4>Machine Learning Assistant</h4>
+              <ul>
+                <li>
+                  Worked on data-driven maintenance prediction projects for
+                  transportation infrastructure.
+                </li>
+                <li>
+                  Implemented supervised learning algorithms with scikit-learn
+                  and TensorFlow.
+                </li>
+                <li>
+                  Automated training and validation processes using Python
+                  scripts.
+                </li>
+                <li>
+                  Contributed to improving the data pipeline, reducing
+                  processing time by 20%.
+                </li>
+              </ul>
+            </div>
+            <p class="date">Oct 2020 – Oct 2022</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardheader">
+            <img src="assets/images/telefonica.png" alt="telefonica" />
+            <div class="cardtext">
+              <h4>Data Analyst Intern</h4>
+              <ul>
+                <li>Cleanse of big volumes of data, using SQL and Python.</li>
+                <li>
+                  Use of Power BI and matplotlib for to visualize data for
+                  weekly reports.
+                </li>
+              </ul>
+            </div>
+            <p class="date">Jul 2019 – Sep 2020</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="work" id="work">
+      <h2 class="button">Work</h2>
+      <h3>Some of the noteworthy projects I have built:</h3>
+      <div class="box">
+        <img src="assets/images/predator-prey.png" alt="predator-prey" />
+        <div class="workcontent">
+          <h4>Predator–Prey Coevolution Model</h4>
+          <p>
+            A Python-based evolutionary simulation modeling predator and prey
+            interactions within a 2D environment. The model explores population
+            balance, emergent behaviors, and ecological stability across
+            generations.
+          </p>
+          <div class="workbuttons">
+            <div class="button">Python</div>
+            <div class="button">ABM</div>
+            <div class="button">Evolutionary Algorithms</div>
+            <div class="button">AI Simulations</div>
+            <div class="button">Data Visualization</div>
+          </div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15 3H21V9"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 14L21 3"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="box rev">
+        <!-- el rev sirve solo para ajustar unas cosas de la imagen sin añadir otro bloque de css-->
+        <div class="workcontent">
+          <h4>Music App Relational Database Project</h4>
+          <p>
+            Designed and implemented a relational database for a digital music
+            platform using SQL and PostgreSQL, including ER modeling, user
+            access control, and query optimization for artists, albums, and
+            playlists.
+          </p>
+          <div class="workbuttons">
+            <div class="button">SQL</div>
+            <div class="button">PostgreSQL</div>
+            <div class="button">ER Modeling</div>
+            <div class="button">Data Security</div>
+            <div class="button">Query Optimization</div>
+            <div class="button">Database Design</div>
+          </div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15 3H21V9"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 14L21 3"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <img
+          src="assets/images/postgresql interface.png"
+          alt="postgresql-project"
+        />
+      </div>
+      <div class="box">
+        <img src="assets/images/proyecto ml.png" alt="project-ml" />
+        <div class="workcontent">
+          <h4>Student Dropout Prediction using Machine Learning</h4>
+          <p>
+            Developed supervised models in Python to predict student dropout
+            using logistic regression and random forest, including EDA, feature
+            encoding, cross-validation, and hyperparameter tuning to improve
+            accuracy and interpretability.
+          </p>
+          <div class="workbuttons">
+            <div class="button">Python</div>
+            <div class="button">Machine Learning</div>
+            <div class="button">Data Analysis</div>
+            <div class="button">EDA</div>
+            <div class="button">Model Tuning</div>
+            <div class="button">Logistic Regression</div>
+            <div class="button">Random Forest</div>
+          </div>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15 3H21V9"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 14L21 3"
+              stroke="#4B5563"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials" id="testimonials">
+      <h2 class="button">Testimonials</h2>
+      <h3>Nice things people have said about me:</h3>
+      <div class="testcards">
+        <div class="testcard">
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="64" height="64" rx="32" fill="#9CA3AF" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M24.5 22C24.5 20.0109 25.2902 18.1032 26.6967 16.6967C28.1032 15.2902 30.0109 14.5 32 14.5C33.9891 14.5 35.8968 15.2902 37.3033 16.6967C38.7098 18.1032 39.5 20.0109 39.5 22C39.5 23.9891 38.7098 25.8968 37.3033 27.3033C35.8968 28.7098 33.9891 29.5 32 29.5C30.0109 29.5 28.1032 28.7098 26.6967 27.3033C25.2902 25.8968 24.5 23.9891 24.5 22ZM18.2517 45.5083C18.3079 41.8991 19.7811 38.4568 22.3533 35.9243C24.9255 33.3918 28.3904 31.9724 32 31.9724C35.6096 31.9724 39.0745 33.3918 41.6467 35.9243C44.2189 38.4568 45.6921 41.8991 45.7483 45.5083C45.7527 45.7513 45.6861 45.9903 45.5567 46.196C45.4274 46.4017 45.2409 46.5653 45.02 46.6667C40.9353 48.5395 36.4936 49.5061 32 49.5C27.3567 49.5 22.945 48.4867 18.98 46.6667C18.7591 46.5653 18.5726 46.4017 18.4433 46.196C18.3139 45.9903 18.2473 45.7513 18.2517 45.5083Z"
+              fill="black"
+            />
+          </svg>
+          <p>
+            “Job well done! I am really impressed. He is very very good at what
+            he does:) I would recommend Sagar and will rehire in the future for
+            Frontend development.”
+          </p>
+          <div class="refcontact">
+            <h4>John Doe</h4>
+            <p>Founder - xyz.com</p>
+          </div>
+        </div>
+        <div class="testcard">
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="64" height="64" rx="32" fill="#9CA3AF" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M24.5 22C24.5 20.0109 25.2902 18.1032 26.6967 16.6967C28.1032 15.2902 30.0109 14.5 32 14.5C33.9891 14.5 35.8968 15.2902 37.3033 16.6967C38.7098 18.1032 39.5 20.0109 39.5 22C39.5 23.9891 38.7098 25.8968 37.3033 27.3033C35.8968 28.7098 33.9891 29.5 32 29.5C30.0109 29.5 28.1032 28.7098 26.6967 27.3033C25.2902 25.8968 24.5 23.9891 24.5 22ZM18.2517 45.5083C18.3079 41.8991 19.7811 38.4568 22.3533 35.9243C24.9255 33.3918 28.3904 31.9724 32 31.9724C35.6096 31.9724 39.0745 33.3918 41.6467 35.9243C44.2189 38.4568 45.6921 41.8991 45.7483 45.5083C45.7527 45.7513 45.6861 45.9903 45.5567 46.196C45.4274 46.4017 45.2409 46.5653 45.02 46.6667C40.9353 48.5395 36.4936 49.5061 32 49.5C27.3567 49.5 22.945 48.4867 18.98 46.6667C18.7591 46.5653 18.5726 46.4017 18.4433 46.196C18.3139 45.9903 18.2473 45.7513 18.2517 45.5083Z"
+              fill="black"
+            />
+          </svg>
+          <p>
+            “Job well done! I am really impressed. He is very very good at what
+            he does:) I would recommend Sagar and will rehire in the future for
+            Frontend development.”
+          </p>
+          <div class="refcontact">
+            <h4>John Doe</h4>
+            <p>Founder - xyz.com</p>
+          </div>
+        </div>
+        <div class="testcard">
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="64" height="64" rx="32" fill="#9CA3AF" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M24.5 22C24.5 20.0109 25.2902 18.1032 26.6967 16.6967C28.1032 15.2902 30.0109 14.5 32 14.5C33.9891 14.5 35.8968 15.2902 37.3033 16.6967C38.7098 18.1032 39.5 20.0109 39.5 22C39.5 23.9891 38.7098 25.8968 37.3033 27.3033C35.8968 28.7098 33.9891 29.5 32 29.5C30.0109 29.5 28.1032 28.7098 26.6967 27.3033C25.2902 25.8968 24.5 23.9891 24.5 22ZM18.2517 45.5083C18.3079 41.8991 19.7811 38.4568 22.3533 35.9243C24.9255 33.3918 28.3904 31.9724 32 31.9724C35.6096 31.9724 39.0745 33.3918 41.6467 35.9243C44.2189 38.4568 45.6921 41.8991 45.7483 45.5083C45.7527 45.7513 45.6861 45.9903 45.5567 46.196C45.4274 46.4017 45.2409 46.5653 45.02 46.6667C40.9353 48.5395 36.4936 49.5061 32 49.5C27.3567 49.5 22.945 48.4867 18.98 46.6667C18.7591 46.5653 18.5726 46.4017 18.4433 46.196C18.3139 45.9903 18.2473 45.7513 18.2517 45.5083Z"
+              fill="black"
+            />
+          </svg>
+          <p>
+            “Job well done! I am really impressed. He is very very good at what
+            he does:) I would recommend Sagar and will rehire in the future for
+            Frontend development.”
+          </p>
+          <div class="refcontact">
+            <h4>John Doe</h4>
+            <p>Founder - xyz.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2 class="button">Get in touch</h2>
+      <div class="contactcontent">
+        <h3>
+          What’s next? Feel free to reach out to me if you're looking for a
+          developer, have a query, or simply want to connect.
+        </h3>
+        <div class="details">
+          <h2>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26.6667 5.3335H5.33341C3.86066 5.3335 2.66675 6.5274 2.66675 8.00016V24.0002C2.66675 25.4729 3.86066 26.6668 5.33341 26.6668H26.6667C28.1395 26.6668 29.3334 25.4729 29.3334 24.0002V8.00016C29.3334 6.5274 28.1395 5.3335 26.6667 5.3335Z"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M29.3334 9.3335L17.3734 16.9335C16.9618 17.1914 16.4858 17.3282 16.0001 17.3282C15.5143 17.3282 15.0384 17.1914 14.6267 16.9335L2.66675 9.3335"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+            >beatrizalbiacd@gmail.com<svg
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26.6667 10.6665H13.3334C11.8607 10.6665 10.6667 11.8604 10.6667 13.3332V26.6665C10.6667 28.1393 11.8607 29.3332 13.3334 29.3332H26.6667C28.1395 29.3332 29.3334 28.1393 29.3334 26.6665V13.3332C29.3334 11.8604 28.1395 10.6665 26.6667 10.6665Z"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.33341 21.3332C3.86675 21.3332 2.66675 20.1332 2.66675 18.6665V5.33317C2.66675 3.8665 3.86675 2.6665 5.33341 2.6665H18.6667C20.1334 2.6665 21.3334 3.8665 21.3334 5.33317"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </h2>
+          <h2>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M29.3334 22.56V26.56C29.3349 26.9313 29.2589 27.2989 29.1101 27.6391C28.9613 27.9793 28.7431 28.2848 28.4695 28.5358C28.1959 28.7868 27.8728 28.9779 27.5211 29.0969C27.1693 29.2159 26.7966 29.2601 26.4267 29.2266C22.3239 28.7808 18.3827 27.3788 14.9201 25.1333C11.6985 23.0862 8.96719 20.3549 6.92007 17.1333C4.66671 13.6549 3.2644 9.69463 2.82674 5.5733C2.79342 5.20459 2.83724 4.83298 2.95541 4.48213C3.07357 4.13128 3.2635 3.80889 3.51309 3.53546C3.76269 3.26204 4.06648 3.04358 4.40513 2.894C4.74378 2.74441 5.10986 2.66698 5.48007 2.66663H9.48007C10.1271 2.66026 10.7545 2.8894 11.2451 3.31134C11.7357 3.73328 12.0562 4.31923 12.1467 4.95997C12.3156 6.24006 12.6287 7.49694 13.0801 8.70663C13.2595 9.18387 13.2983 9.70252 13.1919 10.2011C13.0856 10.6998 12.8386 11.1574 12.4801 11.52L10.7867 13.2133C12.6848 16.5514 15.4487 19.3152 18.7867 21.2133L20.4801 19.52C20.8426 19.1615 21.3003 18.9144 21.7989 18.8081C22.2975 18.7018 22.8162 18.7406 23.2934 18.92C24.5031 19.3714 25.76 19.6845 27.0401 19.8533C27.6878 19.9447 28.2793 20.2709 28.7021 20.77C29.125 21.269 29.3496 21.9061 29.3334 22.56Z"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+            >+34 123456789<svg
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26.6667 10.6665H13.3334C11.8607 10.6665 10.6667 11.8604 10.6667 13.3332V26.6665C10.6667 28.1393 11.8607 29.3332 13.3334 29.3332H26.6667C28.1395 29.3332 29.3334 28.1393 29.3334 26.6665V13.3332C29.3334 11.8604 28.1395 10.6665 26.6667 10.6665Z"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.33341 21.3332C3.86675 21.3332 2.66675 20.1332 2.66675 18.6665V5.33317C2.66675 3.8665 3.86675 2.6665 5.33341 2.6665H18.6667C20.1334 2.6665 21.3334 3.8665 21.3334 5.33317"
+                stroke="#4B5563"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </h2>
+        </div>
+        <p>You may also find me on these platforms!</p>
       </div>
       <div class="apps">
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.9999 29.3337V24.0003C20.1854 22.33 19.7065 20.6538 18.6666 19.3337C22.6666 19.3337 26.6666 16.667 26.6666 12.0003C26.7732 10.3337 26.3066 8.69366 25.3332 7.33366C25.7066 5.80033 25.7066 4.20033 25.3332 2.66699C25.3332 2.66699 23.9999 2.66699 21.3332 4.66699C17.8132 4.00033 14.1866 4.00033 10.6666 4.66699C7.99989 2.66699 6.66655 2.66699 6.66655 2.66699C6.26655 4.20033 6.26655 5.80033 6.66655 7.33366C5.69572 8.68817 5.22452 10.3374 5.33322 12.0003C5.33322 16.667 9.33322 19.3337 13.3332 19.3337C12.8132 19.987 12.4266 20.7337 12.1999 21.5337C11.9732 22.3337 11.9066 23.1737 11.9999 24.0003V29.3337" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12.0001 23.9997C5.98675 26.6663 5.33341 21.333 2.66675 21.333" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.9999 29.3337V24.0003C20.1854 22.33 19.7065 20.6538 18.6666 19.3337C22.6666 19.3337 26.6666 16.667 26.6666 12.0003C26.7732 10.3337 26.3066 8.69366 25.3332 7.33366C25.7066 5.80033 25.7066 4.20033 25.3332 2.66699C25.3332 2.66699 23.9999 2.66699 21.3332 4.66699C17.8132 4.00033 14.1866 4.00033 10.6666 4.66699C7.99989 2.66699 6.66655 2.66699 6.66655 2.66699C6.26655 4.20033 6.26655 5.80033 6.66655 7.33366C5.69572 8.68817 5.22452 10.3374 5.33322 12.0003C5.33322 16.667 9.33322 19.3337 13.3332 19.3337C12.8132 19.987 12.4266 20.7337 12.1999 21.5337C11.9732 22.3337 11.9066 23.1737 11.9999 24.0003V29.3337"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12.0001 23.9997C5.98675 26.6663 5.33341 21.333 2.66675 21.333"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
         </svg>
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M29.3334 5.33369C29.3334 5.33369 28.4001 8.13369 26.6667 9.86702C28.8001 23.2004 14.1334 32.9337 2.66675 25.3337C5.60008 25.467 8.53341 24.5337 10.6667 22.667C4.00008 20.667 0.666748 12.8004 4.00008 6.66702C6.93341 10.1337 11.4667 12.1337 16.0001 12.0004C14.8001 6.40036 21.3334 3.20036 25.3334 6.93369C26.8001 6.93369 29.3334 5.33369 29.3334 5.33369Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M29.3334 5.33369C29.3334 5.33369 28.4001 8.13369 26.6667 9.86702C28.8001 23.2004 14.1334 32.9337 2.66675 25.3337C5.60008 25.467 8.53341 24.5337 10.6667 22.667C4.00008 20.667 0.666748 12.8004 4.00008 6.66702C6.93341 10.1337 11.4667 12.1337 16.0001 12.0004C14.8001 6.40036 21.3334 3.20036 25.3334 6.93369C26.8001 6.93369 29.3334 5.33369 29.3334 5.33369Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
         </svg>
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.66675 7.33366C6.66675 6.09598 7.15841 4.909 8.03358 4.03383C8.90875 3.15866 10.0957 2.66699 11.3334 2.66699H16.0001V12.0003H11.3334C10.0957 12.0003 8.90875 11.5087 8.03358 10.6335C7.15841 9.75832 6.66675 8.57134 6.66675 7.33366Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 2.66699H20.6667C21.2795 2.66699 21.8863 2.7877 22.4525 3.02222C23.0187 3.25674 23.5332 3.60049 23.9665 4.03383C24.3998 4.46717 24.7436 4.98162 24.9781 5.5478C25.2126 6.11399 25.3333 6.72082 25.3333 7.33366C25.3333 7.94649 25.2126 8.55333 24.9781 9.11951C24.7436 9.6857 24.3998 10.2001 23.9665 10.6335C23.5332 11.0668 23.0187 11.4106 22.4525 11.6451C21.8863 11.8796 21.2795 12.0003 20.6667 12.0003H16V2.66699Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 16.6667C16 16.0538 16.1207 15.447 16.3552 14.8808C16.5898 14.3146 16.9335 13.8002 17.3668 13.3668C17.8002 12.9335 18.3146 12.5898 18.8808 12.3552C19.447 12.1207 20.0538 12 20.6667 12C21.2795 12 21.8863 12.1207 22.4525 12.3552C23.0187 12.5898 23.5332 12.9335 23.9665 13.3668C24.3998 13.8002 24.7436 14.3146 24.9781 14.8808C25.2126 15.447 25.3333 16.0538 25.3333 16.6667C25.3333 17.2795 25.2126 17.8863 24.9781 18.4525C24.7436 19.0187 24.3998 19.5332 23.9665 19.9665C23.5332 20.3998 23.0187 20.7436 22.4525 20.9781C21.8863 21.2126 21.2795 21.3333 20.6667 21.3333C20.0538 21.3333 19.447 21.2126 18.8808 20.9781C18.3146 20.7436 17.8002 20.3998 17.3668 19.9665C16.9335 19.5332 16.5898 19.0187 16.3552 18.4525C16.1207 17.8863 16 17.2795 16 16.6667Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6.66675 25.9997C6.66675 24.762 7.15841 23.575 8.03358 22.6998C8.90875 21.8247 10.0957 21.333 11.3334 21.333H16.0001V25.9997C16.0001 27.2374 15.5084 28.4243 14.6332 29.2995C13.7581 30.1747 12.5711 30.6663 11.3334 30.6663C10.0957 30.6663 8.90875 30.1747 8.03358 29.2995C7.15841 28.4243 6.66675 27.2374 6.66675 25.9997Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6.66675 16.6667C6.66675 15.429 7.15841 14.242 8.03358 13.3668C8.90875 12.4917 10.0957 12 11.3334 12H16.0001V21.3333H11.3334C10.0957 21.3333 8.90875 20.8417 8.03358 19.9665C7.15841 19.0913 6.66675 17.9043 6.66675 16.6667Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-    <div class="introimg">
-      <img src="assets/images/gato.jpg" alt="Gato">
-      <div class="shadowintro"></div>
-    </div>
-  </main>
-  <section id="about" class="about">
-    <h2 class="button">About Me</h2>
-    <div class="aboutcontent">
-      <div class="aboutimg">
-        <img src="assets/images/gato2.jpg" alt="Gato2">
-        <div class="shadowabout"></div>
-      </div>
-      <div class="abouttext">
-        <h3>Curious about me? Here you have it:</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-          sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-          Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Lorem ipsum dolor sit amet consectetur 
-          adipiscing elit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-          sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-          Pulvinar vivamus fringilla lacus nec metus bibendum egestas.  Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium 
-          tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec 
-          metus bibendum egestas.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-          sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-          Pulvinar vivamus fringilla lacus nec metus bibendum egestas.</p>
-        <p>Esto es:</p>
-        <ul class="lista">
-          <li>B.E. in Computer Engineering</li>
-          <li>Full time freelancer</li>
-          <li>Avid learner</li>
-          <li>Aspiring indie hacker</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-      </div>
-    </div>
-  </section>
-  <section class="skills">
-    <h2 class="button">Skills</h2>
-    <h3>The skills, tools and technologies I am really good at:</h3>
-    <div class="skillsimgs"> 
-      <div class="skill"><img src="assets/images/python.webp" alt="Python"><p>Python</p></div>
-      <div class="skill"><img src="assets/images/c.png" alt="C"><p>C</p></div>
-      <div class="skill"><img src="assets/images/cassandra.png" alt="Cassandra"><p>Cassandra</p></div>
-      <div class="skill"><img src="assets/images/excell.png" alt="Excel"><p>Excel</p></div>
-      <div class="skill"><img src="assets/images/figma.png" alt="Figma"><p>Figma</p></div>
-      <div class="skill"><img src="assets/images/git.png" alt="Git"><p>Git</p></div>
-      <div class="skill"><img src="assets/images/mongodb.webp" alt="MongoDB"><p>MongoDB</p></div>
-      <div class="skill"><img src="assets/images/neo4j.png" alt="Neo4j"><p>Neo4j</p></div>
-      <div class="skill"><img src="assets/images/postgresql.png" alt="PostgreSQL"><p>PostgreSQL</p></div>
-      <div class="skill"><img src="assets/images/redis.png" alt="Redis"><p>Redis</p></div>
-    </div>
-  </section>
-  <section class="experience">
-    <h2 class="button">Experience</h2>
-    <h3>Here is a quick summary of my most recent experiences:</h3>
-    <div class="cards">
-      <div class = "card">
-      <!-- Para cada una de las tarjetas se repite el siguiente codigo -->
-        <div class="cardheader">
-          <img src="assets/images/origen.png" alt="origen">
-          <div class="cardtext">
-            <h4>Sr. Frontend Developer</h4>
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
-              <li>Sed quis justo ac magna.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div>
-          <p class="date">Nov 2021 – Present</p>  
-        </div>
-      </div>
-      <div class = "card">
-        <div class="cardheader">
-          <img src="assets/images/origen.png" alt="origen">
-          <div class="cardtext">
-            <h4>Sr. Frontend Developer</h4>
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
-              <li>Sed quis justo ac magna.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div>
-          <p class="date">Jul 2017 - Oct 2021</p>  
-        </div>
-      </div>
-      <div class = "card">
-        <div class="cardheader">
-          <img src="assets/images/origen.png" alt="origen">
-          <div class="cardtext">
-            <h4>Sr. Frontend Developer</h4>
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor 
-                sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div>
-          <p class="date">Jul 2017 - Oct 2021</p>  
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="work" id="work">
-    <h2 class="button">Work</h2>
-    <h3>Some of the noteworthy projects I have built:</h3>
-    <div class="box">
-      <img src="assets/images/placeholder.jpeg" alt="project">
-      <div class="workcontent">
-        <h4>Filskil</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra.
-           Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-        <div class="workbuttons">
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-        </div>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15 3H21V9" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M10 14L21 3" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.66675 7.33366C6.66675 6.09598 7.15841 4.909 8.03358 4.03383C8.90875 3.15866 10.0957 2.66699 11.3334 2.66699H16.0001V12.0003H11.3334C10.0957 12.0003 8.90875 11.5087 8.03358 10.6335C7.15841 9.75832 6.66675 8.57134 6.66675 7.33366Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 2.66699H20.6667C21.2795 2.66699 21.8863 2.7877 22.4525 3.02222C23.0187 3.25674 23.5332 3.60049 23.9665 4.03383C24.3998 4.46717 24.7436 4.98162 24.9781 5.5478C25.2126 6.11399 25.3333 6.72082 25.3333 7.33366C25.3333 7.94649 25.2126 8.55333 24.9781 9.11951C24.7436 9.6857 24.3998 10.2001 23.9665 10.6335C23.5332 11.0668 23.0187 11.4106 22.4525 11.6451C21.8863 11.8796 21.2795 12.0003 20.6667 12.0003H16V2.66699Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 16.6667C16 16.0538 16.1207 15.447 16.3552 14.8808C16.5898 14.3146 16.9335 13.8002 17.3668 13.3668C17.8002 12.9335 18.3146 12.5898 18.8808 12.3552C19.447 12.1207 20.0538 12 20.6667 12C21.2795 12 21.8863 12.1207 22.4525 12.3552C23.0187 12.5898 23.5332 12.9335 23.9665 13.3668C24.3998 13.8002 24.7436 14.3146 24.9781 14.8808C25.2126 15.447 25.3333 16.0538 25.3333 16.6667C25.3333 17.2795 25.2126 17.8863 24.9781 18.4525C24.7436 19.0187 24.3998 19.5332 23.9665 19.9665C23.5332 20.3998 23.0187 20.7436 22.4525 20.9781C21.8863 21.2126 21.2795 21.3333 20.6667 21.3333C20.0538 21.3333 19.447 21.2126 18.8808 20.9781C18.3146 20.7436 17.8002 20.3998 17.3668 19.9665C16.9335 19.5332 16.5898 19.0187 16.3552 18.4525C16.1207 17.8863 16 17.2795 16 16.6667Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6.66675 25.9997C6.66675 24.762 7.15841 23.575 8.03358 22.6998C8.90875 21.8247 10.0957 21.333 11.3334 21.333H16.0001V25.9997C16.0001 27.2374 15.5084 28.4243 14.6332 29.2995C13.7581 30.1747 12.5711 30.6663 11.3334 30.6663C10.0957 30.6663 8.90875 30.1747 8.03358 29.2995C7.15841 28.4243 6.66675 27.2374 6.66675 25.9997Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6.66675 16.6667C6.66675 15.429 7.15841 14.242 8.03358 13.3668C8.90875 12.4917 10.0957 12 11.3334 12H16.0001V21.3333H11.3334C10.0957 21.3333 8.90875 20.8417 8.03358 19.9665C7.15841 19.0913 6.66675 17.9043 6.66675 16.6667Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
         </svg>
       </div>
-    </div>
-    <div class="box rev"> <!-- el rev sirve solo para ajustar unas cosas de la imagen sin añadir otro bloque de css-->
-      <div class="workcontent">
-        <h4>Filskil</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra.
-           Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-        <div class="workbuttons">
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-        </div>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15 3H21V9" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M10 14L21 3" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <img src="assets/images/placeholder.jpeg" alt="project">
-    </div>
-    <div class="box">
-      <img src="assets/images/placeholder.jpeg" alt="project">
-      <div class="workcontent">
-        <h4>Filskil</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra.
-           Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-        <div class="workbuttons">
-          <div class="button">React</div>
-          <div class="button">React</div>
-          <div class="button">React</div>
-        </div>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15 3H21V9" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M10 14L21 3" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-  <section class="testimonials" id="testimonials">
-    <h2 class="button">Testimonials</h2>
-    <h3>Nice things people have said about me:</h3>
-    <div class="testcards">
-      <div class="testcard">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="32" fill="#9CA3AF"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 22C24.5 20.0109 25.2902 18.1032 26.6967 16.6967C28.1032 15.2902 30.0109 14.5 32 14.5C33.9891 14.5 35.8968 15.2902 37.3033 16.6967C38.7098 18.1032 39.5 20.0109 39.5 22C39.5 23.9891 38.7098 25.8968 37.3033 27.3033C35.8968 28.7098 33.9891 29.5 32 29.5C30.0109 29.5 28.1032 28.7098 26.6967 27.3033C25.2902 25.8968 24.5 23.9891 24.5 22ZM18.2517 45.5083C18.3079 41.8991 19.7811 38.4568 22.3533 35.9243C24.9255 33.3918 28.3904 31.9724 32 31.9724C35.6096 31.9724 39.0745 33.3918 41.6467 35.9243C44.2189 38.4568 45.6921 41.8991 45.7483 45.5083C45.7527 45.7513 45.6861 45.9903 45.5567 46.196C45.4274 46.4017 45.2409 46.5653 45.02 46.6667C40.9353 48.5395 36.4936 49.5061 32 49.5C27.3567 49.5 22.945 48.4867 18.98 46.6667C18.7591 46.5653 18.5726 46.4017 18.4433 46.196C18.3139 45.9903 18.2473 45.7513 18.2517 45.5083Z" fill="black"/>
-        </svg>
-        <p>“Job well done! I am really impressed. He is very very good at what he does:) 
-          I would recommend Sagar and will rehire in the future for Frontend development.”</p>
-        <div class="refcontact">
-          <h4>John Doe</h4>
-          <p>Founder - xyz.com</p>
-        </div>
-      </div>
-      <div class="testcard">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="32" fill="#9CA3AF"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 22C24.5 20.0109 25.2902 18.1032 26.6967 16.6967C28.1032 15.2902 30.0109 14.5 32 14.5C33.9891 14.5 35.8968 15.2902 37.3033 16.6967C38.7098 18.1032 39.5 20.0109 39.5 22C39.5 23.9891 38.7098 25.8968 37.3033 27.3033C35.8968 28.7098 33.9891 29.5 32 29.5C30.0109 29.5 28.1032 28.7098 26.6967 27.3033C25.2902 25.8968 24.5 23.9891 24.5 22ZM18.2517 45.5083C18.3079 41.8991 19.7811 38.4568 22.3533 35.9243C24.9255 33.3918 28.3904 31.9724 32 31.9724C35.6096 31.9724 39.0745 33.3918 41.6467 35.9243C44.2189 38.4568 45.6921 41.8991 45.7483 45.5083C45.7527 45.7513 45.6861 45.9903 45.5567 46.196C45.4274 46.4017 45.2409 46.5653 45.02 46.6667C40.9353 48.5395 36.4936 49.5061 32 49.5C27.3567 49.5 22.945 48.4867 18.98 46.6667C18.7591 46.5653 18.5726 46.4017 18.4433 46.196C18.3139 45.9903 18.2473 45.7513 18.2517 45.5083Z" fill="black"/>
-        </svg>
-        <p>“Job well done! I am really impressed. He is very very good at what he does:) 
-          I would recommend Sagar and will rehire in the future for Frontend development.”</p>
-        <div class="refcontact">
-          <h4>John Doe</h4>
-          <p>Founder - xyz.com</p>
-        </div>
-      </div>
-      <div class="testcard">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="32" fill="#9CA3AF"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 22C24.5 20.0109 25.2902 18.1032 26.6967 16.6967C28.1032 15.2902 30.0109 14.5 32 14.5C33.9891 14.5 35.8968 15.2902 37.3033 16.6967C38.7098 18.1032 39.5 20.0109 39.5 22C39.5 23.9891 38.7098 25.8968 37.3033 27.3033C35.8968 28.7098 33.9891 29.5 32 29.5C30.0109 29.5 28.1032 28.7098 26.6967 27.3033C25.2902 25.8968 24.5 23.9891 24.5 22ZM18.2517 45.5083C18.3079 41.8991 19.7811 38.4568 22.3533 35.9243C24.9255 33.3918 28.3904 31.9724 32 31.9724C35.6096 31.9724 39.0745 33.3918 41.6467 35.9243C44.2189 38.4568 45.6921 41.8991 45.7483 45.5083C45.7527 45.7513 45.6861 45.9903 45.5567 46.196C45.4274 46.4017 45.2409 46.5653 45.02 46.6667C40.9353 48.5395 36.4936 49.5061 32 49.5C27.3567 49.5 22.945 48.4867 18.98 46.6667C18.7591 46.5653 18.5726 46.4017 18.4433 46.196C18.3139 45.9903 18.2473 45.7513 18.2517 45.5083Z" fill="black"/>
-        </svg>
-        <p>“Job well done! I am really impressed. He is very very good at what he does:) 
-          I would recommend Sagar and will rehire in the future for Frontend development.”</p>
-        <div class="refcontact">
-          <h4>John Doe</h4>
-          <p>Founder - xyz.com</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="contact" id="contact">
-    <h2 class="button">Get in touch</h2>
-    <div class="contactcontent">
-      <h3>What’s next? Feel free to reach out to me if you're looking for a developer, have a query, 
-      or simply want to connect.</h3>
-      <div class="details">
-        <h2><svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26.6667 5.3335H5.33341C3.86066 5.3335 2.66675 6.5274 2.66675 8.00016V24.0002C2.66675 25.4729 3.86066 26.6668 5.33341 26.6668H26.6667C28.1395 26.6668 29.3334 25.4729 29.3334 24.0002V8.00016C29.3334 6.5274 28.1395 5.3335 26.6667 5.3335Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M29.3334 9.3335L17.3734 16.9335C16.9618 17.1914 16.4858 17.3282 16.0001 17.3282C15.5143 17.3282 15.0384 17.1914 14.6267 16.9335L2.66675 9.3335" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>beatrizalbiacd@gmail.com<svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26.6667 10.6665H13.3334C11.8607 10.6665 10.6667 11.8604 10.6667 13.3332V26.6665C10.6667 28.1393 11.8607 29.3332 13.3334 29.3332H26.6667C28.1395 29.3332 29.3334 28.1393 29.3334 26.6665V13.3332C29.3334 11.8604 28.1395 10.6665 26.6667 10.6665Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M5.33341 21.3332C3.86675 21.3332 2.66675 20.1332 2.66675 18.6665V5.33317C2.66675 3.8665 3.86675 2.6665 5.33341 2.6665H18.6667C20.1334 2.6665 21.3334 3.8665 21.3334 5.33317" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </h2>
-        <h2><svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M29.3334 22.56V26.56C29.3349 26.9313 29.2589 27.2989 29.1101 27.6391C28.9613 27.9793 28.7431 28.2848 28.4695 28.5358C28.1959 28.7868 27.8728 28.9779 27.5211 29.0969C27.1693 29.2159 26.7966 29.2601 26.4267 29.2266C22.3239 28.7808 18.3827 27.3788 14.9201 25.1333C11.6985 23.0862 8.96719 20.3549 6.92007 17.1333C4.66671 13.6549 3.2644 9.69463 2.82674 5.5733C2.79342 5.20459 2.83724 4.83298 2.95541 4.48213C3.07357 4.13128 3.2635 3.80889 3.51309 3.53546C3.76269 3.26204 4.06648 3.04358 4.40513 2.894C4.74378 2.74441 5.10986 2.66698 5.48007 2.66663H9.48007C10.1271 2.66026 10.7545 2.8894 11.2451 3.31134C11.7357 3.73328 12.0562 4.31923 12.1467 4.95997C12.3156 6.24006 12.6287 7.49694 13.0801 8.70663C13.2595 9.18387 13.2983 9.70252 13.1919 10.2011C13.0856 10.6998 12.8386 11.1574 12.4801 11.52L10.7867 13.2133C12.6848 16.5514 15.4487 19.3152 18.7867 21.2133L20.4801 19.52C20.8426 19.1615 21.3003 18.9144 21.7989 18.8081C22.2975 18.7018 22.8162 18.7406 23.2934 18.92C24.5031 19.3714 25.76 19.6845 27.0401 19.8533C27.6878 19.9447 28.2793 20.2709 28.7021 20.77C29.125 21.269 29.3496 21.9061 29.3334 22.56Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>+34 123456789<svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26.6667 10.6665H13.3334C11.8607 10.6665 10.6667 11.8604 10.6667 13.3332V26.6665C10.6667 28.1393 11.8607 29.3332 13.3334 29.3332H26.6667C28.1395 29.3332 29.3334 28.1393 29.3334 26.6665V13.3332C29.3334 11.8604 28.1395 10.6665 26.6667 10.6665Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M5.33341 21.3332C3.86675 21.3332 2.66675 20.1332 2.66675 18.6665V5.33317C2.66675 3.8665 3.86675 2.6665 5.33341 2.6665H18.6667C20.1334 2.6665 21.3334 3.8665 21.3334 5.33317" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </h2>
-      </div>
-      <p>You may also find me on these platforms!</p>
-    </div>
-    <div class="apps">
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.9999 29.3337V24.0003C20.1854 22.33 19.7065 20.6538 18.6666 19.3337C22.6666 19.3337 26.6666 16.667 26.6666 12.0003C26.7732 10.3337 26.3066 8.69366 25.3332 7.33366C25.7066 5.80033 25.7066 4.20033 25.3332 2.66699C25.3332 2.66699 23.9999 2.66699 21.3332 4.66699C17.8132 4.00033 14.1866 4.00033 10.6666 4.66699C7.99989 2.66699 6.66655 2.66699 6.66655 2.66699C6.26655 4.20033 6.26655 5.80033 6.66655 7.33366C5.69572 8.68817 5.22452 10.3374 5.33322 12.0003C5.33322 16.667 9.33322 19.3337 13.3332 19.3337C12.8132 19.987 12.4266 20.7337 12.1999 21.5337C11.9732 22.3337 11.9066 23.1737 11.9999 24.0003V29.3337" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12.0001 23.9997C5.98675 26.6663 5.33341 21.333 2.66675 21.333" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M29.3334 5.33369C29.3334 5.33369 28.4001 8.13369 26.6667 9.86702C28.8001 23.2004 14.1334 32.9337 2.66675 25.3337C5.60008 25.467 8.53341 24.5337 10.6667 22.667C4.00008 20.667 0.666748 12.8004 4.00008 6.66702C6.93341 10.1337 11.4667 12.1337 16.0001 12.0004C14.8001 6.40036 21.3334 3.20036 25.3334 6.93369C26.8001 6.93369 29.3334 5.33369 29.3334 5.33369Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.66675 7.33366C6.66675 6.09598 7.15841 4.909 8.03358 4.03383C8.90875 3.15866 10.0957 2.66699 11.3334 2.66699H16.0001V12.0003H11.3334C10.0957 12.0003 8.90875 11.5087 8.03358 10.6335C7.15841 9.75832 6.66675 8.57134 6.66675 7.33366Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 2.66699H20.6667C21.2795 2.66699 21.8863 2.7877 22.4525 3.02222C23.0187 3.25674 23.5332 3.60049 23.9665 4.03383C24.3998 4.46717 24.7436 4.98162 24.9781 5.5478C25.2126 6.11399 25.3333 6.72082 25.3333 7.33366C25.3333 7.94649 25.2126 8.55333 24.9781 9.11951C24.7436 9.6857 24.3998 10.2001 23.9665 10.6335C23.5332 11.0668 23.0187 11.4106 22.4525 11.6451C21.8863 11.8796 21.2795 12.0003 20.6667 12.0003H16V2.66699Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M16 16.6667C16 16.0538 16.1207 15.447 16.3552 14.8808C16.5898 14.3146 16.9335 13.8002 17.3668 13.3668C17.8002 12.9335 18.3146 12.5898 18.8808 12.3552C19.447 12.1207 20.0538 12 20.6667 12C21.2795 12 21.8863 12.1207 22.4525 12.3552C23.0187 12.5898 23.5332 12.9335 23.9665 13.3668C24.3998 13.8002 24.7436 14.3146 24.9781 14.8808C25.2126 15.447 25.3333 16.0538 25.3333 16.6667C25.3333 17.2795 25.2126 17.8863 24.9781 18.4525C24.7436 19.0187 24.3998 19.5332 23.9665 19.9665C23.5332 20.3998 23.0187 20.7436 22.4525 20.9781C21.8863 21.2126 21.2795 21.3333 20.6667 21.3333C20.0538 21.3333 19.447 21.2126 18.8808 20.9781C18.3146 20.7436 17.8002 20.3998 17.3668 19.9665C16.9335 19.5332 16.5898 19.0187 16.3552 18.4525C16.1207 17.8863 16 17.2795 16 16.6667Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6.66675 25.9997C6.66675 24.762 7.15841 23.575 8.03358 22.6998C8.90875 21.8247 10.0957 21.333 11.3334 21.333H16.0001V25.9997C16.0001 27.2374 15.5084 28.4243 14.6332 29.2995C13.7581 30.1747 12.5711 30.6663 11.3334 30.6663C10.0957 30.6663 8.90875 30.1747 8.03358 29.2995C7.15841 28.4243 6.66675 27.2374 6.66675 25.9997Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6.66675 16.6667C6.66675 15.429 7.15841 14.242 8.03358 13.3668C8.90875 12.4917 10.0957 12 11.3334 12H16.0001V21.3333H11.3334C10.0957 21.3333 8.90875 20.8417 8.03358 19.9665C7.15841 19.0913 6.66675 17.9043 6.66675 16.6667Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-  </section>
-  <footer class="copyright">
-    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_327_412)">
-    <path d="M8.49992 14.6668C12.1818 14.6668 15.1666 11.6821 15.1666 8.00016C15.1666 4.31826 12.1818 1.3335 8.49992 1.3335C4.81802 1.3335 1.83325 4.31826 1.83325 8.00016C1.83325 11.6821 4.81802 14.6668 8.49992 14.6668Z" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M10.5 6.23616C10.1417 5.82996 9.66823 5.5425 9.14254 5.41203C8.61685 5.28155 8.0639 5.31424 7.55725 5.50576C7.0506 5.69728 6.61429 6.03854 6.30636 6.48414C5.99843 6.92973 5.8335 7.45853 5.8335 8.00016C5.8335 8.5418 5.99843 9.0706 6.30636 9.51619C6.61429 9.96178 7.0506 10.303 7.55725 10.4946C8.0639 10.6861 8.61685 10.7188 9.14254 10.5883C9.66823 10.4578 10.1417 10.1704 10.5 9.76416" stroke="#4B5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <defs>
-    <clipPath id="clip0_327_412">
-    <rect width="16" height="16" fill="white" transform="translate(0.5)"/>
-    </clipPath>
-    </defs>
-    </svg>
-    <p>2025 | Coded with ❤️️ by Beatriz Albiac</p>
-  </footer>
-</body>
+    </section>
+    <footer class="copyright">
+      <svg
+        width="17"
+        height="16"
+        viewBox="0 0 17 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_327_412)">
+          <path
+            d="M8.49992 14.6668C12.1818 14.6668 15.1666 11.6821 15.1666 8.00016C15.1666 4.31826 12.1818 1.3335 8.49992 1.3335C4.81802 1.3335 1.83325 4.31826 1.83325 8.00016C1.83325 11.6821 4.81802 14.6668 8.49992 14.6668Z"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10.5 6.23616C10.1417 5.82996 9.66823 5.5425 9.14254 5.41203C8.61685 5.28155 8.0639 5.31424 7.55725 5.50576C7.0506 5.69728 6.61429 6.03854 6.30636 6.48414C5.99843 6.92973 5.8335 7.45853 5.8335 8.00016C5.8335 8.5418 5.99843 9.0706 6.30636 9.51619C6.61429 9.96178 7.0506 10.303 7.55725 10.4946C8.0639 10.6861 8.61685 10.7188 9.14254 10.5883C9.66823 10.4578 10.1417 10.1704 10.5 9.76416"
+            stroke="#4B5563"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_327_412">
+            <rect
+              width="16"
+              height="16"
+              fill="white"
+              transform="translate(0.5)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+      <p>2025 | Coded with ❤️️ by Beatriz Albiac</p>
+    </footer>
+  </body>
 </html>
-
-
