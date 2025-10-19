@@ -25,10 +25,13 @@ hosting url: https://portfolio-bad.web.app
 
 ## Some screenshots as preview:
 **Desktop:**
-![Desktop-1](public/assets/images/telefonica.png)
-![Desktop-2]()
-![Desktop-3]()
-![Desktop-4]()
-![Mobile-1]()
-![Mobile-2]()
-![Mobile-3]()
+
+![Desktop-1](public/assets/images/screenshots/1.png)
+![Desktop-2](public/assets/images/screenshots/2.png)
+![Desktop-3](public/assets/images/screenshots/3.png)
+![Desktop-4](public/assets/images/screenshots/4.png)
+**Mobile:**
+
+![Mobile-1](public/assets/images/screenshots/5.png)
+![Mobile-2](public/assets/images/screenshots/6.png)
+![Mobile-3](public/assets/images/screenshots/7.png)
